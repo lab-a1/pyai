@@ -5,13 +5,13 @@ import time
 
 # Numpy and CPU
 s = time.time()
-x_cpu = np.ones((1000, 1000, 1000))
+x_cpu = np.ones((1000, 1000, 700))
 e = time.time()
 print(e - s)
 
 # CuPy and GPU
 s = time.time()
-x_gpu = cp.ones((1000, 1000, 1000))
+x_gpu = cp.ones((1000, 1000, 700))
 cp.cuda.Stream.null.synchronize()
 e = time.time()
 print(e - s)
