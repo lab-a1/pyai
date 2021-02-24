@@ -5,3 +5,7 @@ A artificial intelligence library developed while studying the field. The librar
 # To do
 
 - [ ] Implement Autograd ([example](https://www.youtube.com/watch?v=RxmBukb-Om4&list=PLeDtc0GP5ICldMkRg-DkhpFX1rRBNHTCs));
+
+# Other examples
+
+- [ ] [joelnet](https://github.com/joelgrus/joelnet);
