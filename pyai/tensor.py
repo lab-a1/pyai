@@ -2,23 +2,34 @@ import numpy as np
 
 
 class Tensor:
+    """
+    Tensor is a n-dimensional array.
+    """
+
     def __init__(self, value):
         self.value = np.asarray(value)
+
+    def __call__(self):
+        return self.value
 
     def __str__(self):
         return str(self.value)
 
-    def __add__(self, x):
-        return Tensor(self.value + x.value)
+    def __add__(self, other):
+        return Tensor(self.value + other.value)
 
-    def __sub__(self, x):
-        return Tensor(self.value - x.value)
+    def __sub__(self, other):
+        return Tensor(self.value - other.value)
 
-    def __mul__(self, x):
-        return Tensor(self.value * x.value)
+    def __mul__(self, other):
+        return Tensor(self.value * other.value)
 
-    def __truediv__(self, x):
-        return Tensor(self.value / x.value)
+    def __truediv__(self, other):
+        return Tensor(self.value / other.value)
 
-    def shape(self):
-        return self.value.shape()
+    def __getattribute__(self, key):
+        if key == "__array__":
+            return self
+        elif key == "shape":
+            return self.value.shape
+        return super(Tensor, self).__getattribute__(key)
