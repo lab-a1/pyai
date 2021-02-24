@@ -22,11 +22,6 @@ class Linear(Layer):
         return x @ self.params["w"] + self.params["b"]
 
     def backward(self, gradients: Tensor) -> Tensor:
-        raise NotImplementedError
-
-
-if __name__ == "__main__":
-    linear = Linear(input_size=10, output_size=2)
-    x = Tensor(np.random.rand(16, 10))
-    y = linear.forward(x)
-    print(y)
+        self.gradients["b"] = Tensor(np.sum(gradients, axis=0))
+        self.gradients["w"] = Tensor(self.x.T @ gradients)
+        return gradients @ self.params["w"].T

@@ -35,4 +35,6 @@ class Tensor:
             return self
         elif key == "shape":
             return self.value.shape
+        elif key == "T":
+            return Tensor(self.value.T)
         return super(Tensor, self).__getattribute__(key)

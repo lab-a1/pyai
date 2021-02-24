@@ -9,6 +9,7 @@ class Layer:
 
     def __init__(self) -> None:
         self.params: Dict[str, Tensor] = {}
+        self.gradients: Dict[str, Tensor] = {}
 
     def forward(self, x: Tensor) -> Tensor:
         raise NotImplementedError

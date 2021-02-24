@@ -13,6 +13,12 @@ class MSELoss(BaseLoss):
     def loss(self, y_true: Tensor, y_predicted: Tensor) -> Tensor:
         return Tensor(np.mean(np.square(y_true - y_predicted)))
 
+    def gradients(self, y_true: Tensor, y_predicted: Tensor) -> Tensor:
+        """
+        Equation: \frac{d_{loss}}{d_{y\_predicted}}
+        """
+        return Tensor((y_true - y_predicted) * Tensor(2))
+
 
 if __name__ == "__main__":
     criterion = MSELoss()
