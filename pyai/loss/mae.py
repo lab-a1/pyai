@@ -1,6 +1,6 @@
 import numpy as np
 from pyai.loss.base import BaseLoss
-from pyai.tensor import Tensor
+from pyai import Tensor
 
 
 class MAELoss(BaseLoss):

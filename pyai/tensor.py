@@ -24,6 +24,9 @@ class Tensor:
     def __mul__(self, other):
         return Tensor(self.value * other.value)
 
+    def __matmul__(self, other):
+        return Tensor(self.value @ other.value)
+
     def __truediv__(self, other):
         return Tensor(self.value / other.value)
 
