@@ -10,8 +10,7 @@ class MSELoss(BaseLoss):
     """
 
     def forward(self, y_true, y_predicted):
-        squared = np.square(y_true - y_predicted)
-        return np.mean(np.abs(squared))
+        return np.mean(np.square(y_true - y_predicted))
 
 
 if __name__ == "__main__":
