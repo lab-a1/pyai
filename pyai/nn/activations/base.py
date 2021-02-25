@@ -1,12 +1,12 @@
-from pyai.nn.layers import Layer
-from pyai import Tensor
 from typing import Callable
+from pyai.nn.layers.base import BaseLayer
+from pyai import Tensor
 
 
 F = Callable[[Tensor], Tensor]
 
 
-class ActivationFunction(Layer):
+class ActivationFunction(BaseLayer):
     def __init__(self, f: F, f_prime: F) -> None:
         super().__init__()
         self.f = f

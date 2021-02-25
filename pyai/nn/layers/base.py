@@ -2,7 +2,7 @@ from typing import Dict
 from pyai import Tensor
 
 
-class Layer:
+class BaseLayer:
     """
     Generic layer for neural network layers.
     """
