@@ -26,5 +26,5 @@ setup(
     ],
     package_dir={"": "src"},
     python_requires=">=3.6",
-    packages=find_packages(where="src", exclude=("tests")),
+    packages=find_packages(where="src", exclude=["tests*"]),
 )
