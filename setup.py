@@ -8,7 +8,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="pyai-cs",
-    version="0.0.5",
+    version="0.0.6",
     author="Claudio Scheer",
     author_email="claudioscheer@protonmail.com",
     description="My own artificial intelligence library intended for learning.",
