@@ -1,4 +1,4 @@
-from pyai import Tensor, metrics
+from pyai import metrics
 import numpy as np
 
 
