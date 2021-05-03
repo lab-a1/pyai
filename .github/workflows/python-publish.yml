@@ -27,8 +27,8 @@ jobs:
         chmod +x scripts/deploy.sh
         ./scripts/deploy.sh
     - uses: EndBug/add-and-commit@v7
-      with:
-        author_name: Claudio Scheer
-        author_email: claudioscheer@protonmail.com
-        message: 'Update version'
+#       with:
+#         author_name: Claudio Scheer
+#         author_email: claudioscheer@protonmail.com
+#         message: 'Update version'
 
