@@ -1,0 +1,2 @@
+-std=c++17
+-Itests/build/_deps/googletest-src/googletest/include
