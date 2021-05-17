@@ -1,2 +1,3 @@
 -std=c++17
 -Itests/build/_deps/googletest-src/googletest/include
+-I/home/water/miniconda3/envs/dnn/include

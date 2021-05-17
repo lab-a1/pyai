@@ -8,10 +8,20 @@ FetchContent_Declare(googletest URL https://github.com/google/googletest/archive
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
+include(GoogleTest)
+find_package(xtensor REQUIRED)
+
 enable_testing()
 
-add_executable(hello_test src/hello_test.cpp)
-target_link_libraries(hello_test gtest_main)
+set(TESTS
+    hello_test
+    knn_test
+)
 
-include(GoogleTest)
-gtest_discover_tests(hello_test)
+foreach(t ${TESTS})
+    add_executable(${t} src/${t}.cpp)
+    target_link_libraries(${t} PUBLIC gtest_main xtensor)
+    target_include_directories(${t} PUBLIC ${xtensor_INCLUDE_DIRS})
+    gtest_discover_tests(${t})
+endforeach(t)
+
