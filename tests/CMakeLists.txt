@@ -13,15 +13,8 @@ find_package(xtensor REQUIRED)
 
 enable_testing()
 
-set(TESTS
-    hello_test
-    knn_test
-)
+add_executable(main src/main.cpp)
+target_link_libraries(main PUBLIC gtest_main xtensor)
+target_include_directories(main PUBLIC ${xtensor_INCLUDE_DIRS})
 
-foreach(t ${TESTS})
-    add_executable(${t} src/${t}.cpp)
-    target_link_libraries(${t} PUBLIC gtest_main xtensor)
-    target_include_directories(${t} PUBLIC ${xtensor_INCLUDE_DIRS})
-    gtest_discover_tests(${t})
-endforeach(t)
-
+gtest_discover_tests(main)
